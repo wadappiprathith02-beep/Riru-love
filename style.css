@@ -7,8 +7,31 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    min-height: 100vh;
 }
 
+/* ========================
+   Page-specific backgrounds
+======================== */
+body.page1 {  /* Countdown page */
+    background: url('bg1.jpg') no-repeat center center fixed;
+}
+
+body.page2 {  /* Six Months page */
+    background: url('bg3.jpg') no-repeat center center fixed;
+}
+
+body.page3 {  /* Valentine page */
+    background: url('bg3.jpg') no-repeat center center fixed;
+}
+
+body.page4 {  /* Love video page fallback */
+    background-color: #000;
+}
+
+/* ========================
+   Titles
+======================== */
 h1 {
     font-family: 'Pacifico', cursive;
     font-size: 52px;
@@ -114,7 +137,7 @@ a.button {
     font-size: 20px;
     font-weight: 700;
     text-decoration: none;
-    box-shadow: 0 6px 15px rgba(255, 111, 177, 0.5);
+    box-shadow: 0 6px 15px rgba(255,111,177,0.5);
     transition: 0.3s;
     margin-top: 20px;
     text-align: center;
@@ -122,7 +145,7 @@ a.button {
 
 a.button:hover {
     transform: scale(1.08);
-    box-shadow: 0 8px 20px rgba(255, 111, 177, 0.7);
+    box-shadow: 0 8px 20px rgba(255,111,177,0.7);
 }
 
 /* ========================
@@ -137,31 +160,23 @@ a.button:hover {
 }
 
 /* ========================
+   Video Fullscreen
+======================== */
+video {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* ========================
    Responsive
 ======================== */
 @media (max-width: 500px) {
-    .box {
-        width: 100px;
-    }
-    .img-container {
-        width: 100px;
-        height: 100px;
-    }
-    .overlay-number {
-        font-size: 26px;
-    }
-    h1 {
-        font-size: 40px;
-    }
-    h3 {
-        font-size: 18px;
-    }
-    .subtitle, .letter-box {
-        padding: 12px 18px;
-        font-size: 16px;
-    }
-    a.button {
-        padding: 12px 25px;
-        font-size: 18px;
-    }
+    .box { width: 100px; }
+    .img-container { width: 100px; height: 100px; }
+    .overlay-number { font-size: 26px; }
+    h1 { font-size: 40px; }
+    h3 { font-size: 18px; }
+    .subtitle, .letter-box { padding: 12px 18px; font-size: 16px; }
+    a.button { padding: 12px 25px; font-size: 18px; }
 }
