@@ -102,9 +102,26 @@
       box-shadow: 2px 2px 15px rgba(255,102,179,0.6);
     }
 
-    audio {
-      display: none; /* hide audio player */
-    }
+    <audio id="bgMusic" autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<style>
+audio {
+  display: none; /* hide the audio player */
+}
+</style>
+
+<script>
+const bgMusic = document.getElementById("bgMusic");
+
+// Try autoplay (desktop)
+bgMusic.play().catch(()=>{});
+
+// Mobile fix: play on first tap or click
+document.addEventListener("touchstart", ()=>{ bgMusic.play().catch(()=>{}); }, { once:true });
+document.addEventListener("click", ()=>{ bgMusic.play().catch(()=>{}); }, { once:true });
+</script>
 
     /* Responsive */
     @media (max-width: 500px) {
