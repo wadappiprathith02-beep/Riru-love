@@ -13,25 +13,34 @@ body {
 /* ========================
    Page-specific backgrounds
 ======================== */
+/* ========================
+   Titles
+======================== */
+/* ========================
+   Page-specific backgrounds
+======================== */
 body.page1 {  /* Countdown page */
-    background: url('bg1.jpg') no-repeat center center fixed;
+    background: url('bg1.jpg') no-repeat center top;
+    background-size: contain; /* fits nicely without cropping */
+    background-attachment: fixed; /* optional for slight parallax */
 }
 
 body.page2 {  /* Six Months page */
-    background: url('bg3.jpg') no-repeat center center fixed;
+    background: url('bg3.jpg') no-repeat center top;
+    background-size: contain;
+    background-attachment: fixed;
 }
 
 body.page3 {  /* Valentine page */
-    background: url('bg3.jpg') no-repeat center center fixed;
+    background: url('bg3.jpg') no-repeat center top;
+    background-size: contain;
+    background-attachment: fixed;
 }
 
 body.page4 {  /* Love video page fallback */
     background-color: #000;
 }
 
-/* ========================
-   Titles
-======================== */
 h1 {
     font-family: 'Pacifico', cursive;
     font-size: 52px;
