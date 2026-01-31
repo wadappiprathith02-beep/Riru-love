@@ -42,7 +42,25 @@
     <audio id="bgMusic" autoplay loop>
   <source src="music.mp3" type="audio/mpeg">
 </audio>
+<audio id="bgMusic" loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
 
+<script>
+const bgMusic = document.getElementById("bgMusic");
+
+// Try autoplay (desktop)
+bgMusic.play().catch(()=>{});
+
+// Unlock audio on first user interaction
+document.addEventListener("click", () => {
+  bgMusic.play().catch(()=>{});
+}, { once: true });
+
+document.addEventListener("touchstart", () => {
+  bgMusic.play().catch(()=>{});
+}, { once: true });
+</script>
 <script>
 const bgMusic = document.getElementById("bgMusic");
 
