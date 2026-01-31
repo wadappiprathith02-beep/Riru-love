@@ -19,27 +19,52 @@ body {
 /* ========================
    Page-specific backgrounds
 ======================== */
-body.page1 {  /* Countdown page */
-    background: url('bg1.jpg') no-repeat center top;
-    background-size: contain; /* fits nicely without cropping */
-    background-attachment: fixed; /* optional for slight parallax */
+
+/* Make sure body and html cover the full viewport */
+html, body {
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
 }
 
-body.page2 {  /* Six Months page */
-    background: url('bg3.jpg') no-repeat center top;
-    background-size: contain;
-    background-attachment: fixed;
+/* Overlay centered */
+.overlay {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center; /* vertical center */
+    align-items: center;     /* horizontal center */
+    padding: 20px;
 }
 
-body.page3 {  /* Valentine page */
-    background: url('bg3.jpg') no-repeat center top;
-    background-size: contain;
-    background-attachment: fixed;
+/* Background full coverage without stretching */
+body.page1 {  /* Countdown */
+    background: url('bg1.jpg') no-repeat center top fixed;
+    background-size: cover;
 }
 
-body.page4 {  /* Love video page fallback */
+body.page2 {  /* Six Months */
+    background: url('bg3.jpg') no-repeat center top fixed;
+    background-size: cover;
+}
+
+body.page3 {  /* Valentine */
+    background: url('bg3.jpg') no-repeat center top fixed;
+    background-size: cover;
+}
+
+body.page4 {  /* Love video fallback */
     background-color: #000;
 }
+
+/* Optional: prevent white space on short content */
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
 
 h1 {
     font-family: 'Pacifico', cursive;
