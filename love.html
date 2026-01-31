@@ -6,49 +6,39 @@
   <title>Love 💖</title>
   <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+
   <style>
-    body {
+    body.page4 {
       margin: 0;
       font-family: 'Kalam', cursive;
+      background-color: #000; /* fallback */
       display: flex;
       justify-content: center;
       align-items: center;
       height: 100vh;
-      background-color: #000; /* fallback in case video doesn't load */
     }
 
     video {
       width: 100%;
-      max-width: 100%;
       height: auto;
       display: block;
     }
+  </style>
+</head>
 
-    #
-<body>
-
-  <video id="kissing" autoplay loop muted playsinline>
-    <source src="kissing.mp4" type="video/mp4">
+<body class="page4">
+  <video id="loveVideo" autoplay loop muted playsinline>
+    <source src="love.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 
-  
-
   <script>
     const video = document.getElementById("loveVideo");
-    const btn = document.getElementById("playBtn");
-
-    btn.addEventListener("click", () => {
-      video.muted = false;  // unmute
-      video.play();
-      btn.style.display = "none"; // hide button
-    });
 
     // Mobile autoplay workaround
     document.addEventListener("touchstart", () => { 
       video.play().catch(()=>{}); 
     }, { once: true });
   </script>
-
 </body>
 </html>
