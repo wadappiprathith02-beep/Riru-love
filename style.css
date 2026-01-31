@@ -42,17 +42,17 @@ body {
 }
 /* Background per page */
 .page1 {
-  background: url("images/bg1.jpg") no-repeat center center fixed;
+  background: url("bg1.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
 .page2 {
-  background: url("images/bg2.jpg") no-repeat center center fixed;
+  background: url("bg2.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 
 .page3 {
-  background: url("images/bg3.jpg") no-repeat center center fixed;
+  background: url("bg3.jpg") no-repeat center center fixed;
   background-size: cover;
 }
 #confetti {
