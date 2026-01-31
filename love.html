@@ -1,54 +1,78 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Love Video 💕</title>
-
+  <title>Love 💖</title>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
   <style>
-    html, body {
+    body {
       margin: 0;
-      padding: 0;
-      height: 100%;
-      width: 100%;
-      overflow: hidden;
-      background: black;
+      font-family: 'Kalam', cursive;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #000; /* fallback in case video doesn't load */
     }
 
-    /* Video fills the screen */
     video {
-      position: fixed;
-      top: 0;
-      left: 0;
       width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    #playBtn {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: linear-gradient(135deg, #ff9acb, #ff6fb1);
+      color: white;
+      padding: 16px 40px;
+      border-radius: 30px;
+      font-size: 24px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      box-shadow: 0 6px 15px rgba(255,111,177,0.5);
+      z-index: 10;
+      transition: 0.3s;
+    }
+
+    #playBtn:hover {
+      transform: translate(-50%, -50%) scale(1.08);
+      box-shadow: 0 8px 20px rgba(255,111,177,0.7);
     }
   </style>
 </head>
-
 <body>
-  <!-- Fullscreen video -->
-  <video autoplay muted loop playsinline>
-    <source src="video/kissing.mp4" type="video/mp4">
+
+  <video id="loveVideo" autoplay loop muted playsinline>
+    <source src="love.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <video id="kissing" loop playsinline>
-  <source src="video/kissing.mp4" type="video/mp4">
-</video>
 
-<button id="playBtn">Tap to play with sound 💕</button>
+  <!-- Button to enable sound -->
+  <button id="playBtn">Tap to Play Audio 💕</button>
 
-<script>
-  const video = document.getElementById("loveVideo");
-  const btn = document.getElementById("playBtn");
+  <script>
+    const video = document.getElementById("loveVideo");
+    const btn = document.getElementById("playBtn");
 
-  btn.onclick = () => {
-    video.muted = false;
-    video.play();
-    btn.style.display = "none";
-  };
-</script>
+    btn.addEventListener("click", () => {
+      video.muted = false;  // unmute
+      video.play();
+      btn.style.display = "none"; // hide button
+    });
+
+    // Mobile autoplay workaround
+    document.addEventListener("touchstart", () => { 
+      video.play().catch(()=>{}); 
+    }, { once: true });
+  </script>
+
 </body>
-</html>>>
+</html>
