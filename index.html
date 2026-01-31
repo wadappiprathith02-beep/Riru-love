@@ -203,22 +203,7 @@
         document.getElementById("minutes").innerHTML = minutes;
         document.getElementById("seconds").innerHTML = seconds;
       }
-<audio id="bgmusic" loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
 
-<script>
-  const music = document.getElementById("bgmusic");
-
-  function startMusic() {
-    music.play();
-    document.removeEventListener("click", startMusic);
-    document.removeEventListener("touchstart", startMusic);
-  }
-
-  document.addEventListener("click", startMusic);
-  document.addEventListener("touchstart", startMusic);
-</script>
       updateCountdown();
       setInterval(updateCountdown, 1000);
     </script>
