@@ -39,6 +39,25 @@
     document.addEventListener("touchstart", () => { 
       video.play().catch(()=>{}); 
     }, { once: true });
+    <audio id="bgMusic" autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+const bgMusic = document.getElementById("bgMusic");
+
+// Try to play immediately (desktop browsers)
+bgMusic.play().catch(() => {});
+
+// Mobile workaround: play on first user interaction
+document.addEventListener("touchstart", () => {
+  bgMusic.play().catch(()=>{});
+}, { once: true });
+
+document.addEventListener("click", () => {
+  bgMusic.play().catch(()=>{});
+}, { once: true });
+<script>
   </script>
 </body>
 </html>
